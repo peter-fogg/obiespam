@@ -73,10 +73,11 @@ def comment(text, post_id):
 
 # Spams new posts with the contents of messages, a list. If the post_id is given,
 # spams comments; otherwise new posts. Waits to avoid blocking.
-def spam(messages,post_id=-1, wait=60):
-    for message in messages:
-        if post_id > 0:
-            comment(message, post_id)
-        else:
-            post(message)
-        sleep(wait)
+def spam(messages,post_id=-1, wait=60, times=1):
+    for _ in xrange(times):
+        for message in messages:
+            if post_id > 0:
+                comment(message, post_id)
+            else:
+                post(message)
+                sleep(wait)
