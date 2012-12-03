@@ -1,9 +1,6 @@
 from urllib import urlencode
 import urllib2
-from sys import argv
-import os
 from HTMLParser import HTMLParser
-from random import randint, shuffle
 from time import sleep
 
 BASE_URL = 'http://www.obietalk.com/'
